@@ -1,0 +1,38 @@
+.heroSection{
+    height: 50vh;
+    overflow: hidden;
+}
+.landingBG img {
+  width: 100%;
+  height: 100vh;
+}
+.overlay {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.7);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.CAL a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #ff5c00;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: 400ms all ease-in-out;
+  font-size: 1rem;
+  letter-spacing: 0.2rem;
+}
+.CAL a:hover {
+  background: #fe8139;
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+}
