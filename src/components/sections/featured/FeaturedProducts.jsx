@@ -13,23 +13,31 @@ const FeaturedProducts = () => {
       <div className="cards">
         <div className="card">
           <Image src={featIMG} alt="featImage" />
-          <p className="text-2xl text-gray-600">Shoes</p>
-          <Link href={'/'} className="text-2xl">View Product</Link>
+          <p className="text-[1rem] text-gray-600 font-semibold">Foot Wears</p>
+          <Link href={"/"} className="text-[1rem]">
+            View Product
+          </Link>
         </div>
         <div className="card">
           <Image src={featIMG} alt="featImage" />
-          <p className="text-2xl text-gray-600">Shoes</p>
-          <Link href={'/'} className="text-2xl">View Product</Link>
+          <p className="text-[1rem] text-gray-600 font-semibold">Male Outfits</p>
+          <Link href={"/"} className="text-[1rem]">
+            View Product
+          </Link>
         </div>
         <div className="card">
           <Image src={featIMG} alt="featImage" />
-          <p className="text-2xl text-gray-600">Shoes</p>
-          <Link href={'/'} className="text-2xl">View Product</Link>
+          <p className="text-[1rem] text-gray-600 font-semibold">Femaile Outfits</p>
+          <Link href={"/"} className="text-[1rem]">
+            View Product
+          </Link>
         </div>
         <div className="card">
           <Image src={featIMG} alt="featImage" />
-          <p className="text-2xl text-gray-600">Shoes</p>
-          <Link href={'/'} className="text-2xl">View Product</Link>
+          <p className="text-[1rem] text-gray-600 font-semibold">Accesories</p>
+          <Link href={"/"} className="text-[1rem]">
+            View Product
+          </Link>
         </div>
       </div>
     </div>
