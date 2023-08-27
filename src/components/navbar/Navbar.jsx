@@ -1,15 +1,29 @@
-import React from "react";
+"use client";
+import React, { useContext, useEffect, useState } from "react";
 import "./navbar.css";
 import Link from "next/link";
 import { BsCartCheck } from "react-icons/bs";
+import { GlobalContext } from "../../context/index";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
+  const router = useRouter();
+  const { user, isAuthUser, setIsAuthUser, setUser } =
+    useContext(GlobalContext);
+  const handleLogout = () => {
+    localStorage.clear();
+    setIsAuthUser(false);
+    setUser(null);
+    Cookies.remove("token");
+    router.push("/");
+  };
   return (
     <>
       <nav>
-        <div className="logo">
+        <div className="logo font-bold ">
           <Link href={"/"}>
-            Black<span className="text-secondary">able</span>
+            BLACK<span className="text-secondary">ABLE</span>
           </Link>
         </div>
         <div className="navigation">
@@ -24,12 +38,22 @@ const Navbar = () => {
               0
             </p>
           </Link>
-          <Link href={"/"}>Account</Link>
-          <Link href={"/"}>Login</Link>
-          <Link href={"/register"} className="reg">
-            Register
-          </Link>
-          <button>Logout</button>
+          {/* {user?.role === "user" && <Link href={"/auth/login"}>User</Link>} */}
+          {isAuthUser === true ? (
+            <>
+              <Link href={"/"}>
+                Hello <span className="text-secondary font-semibold">{user?.name}</span>
+              </Link>
+              <button onClick={handleLogout}>Logout</button>
+            </>
+          ) : (
+            <>
+              <Link href={"/auth/login"}>Login</Link>
+              <Link href={"/auth/register"} className="reg">
+                Register
+              </Link>
+            </>
+          )}
         </div>
       </nav>
     </>

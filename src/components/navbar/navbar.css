@@ -21,7 +21,8 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 60%;
+  gap:5rem;
+  /* width: 50%; */
   font-size: 1.2rem;
 }
 

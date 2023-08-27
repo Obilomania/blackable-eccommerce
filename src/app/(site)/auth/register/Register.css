@@ -14,9 +14,14 @@
   border: 1px solid white;
   padding: 1rem 1rem;
 }
+
+.registerForm form input::after {
+  outline: none;
+  background: transparent;
+}
 .registerForm form button {
   background: #ff5c00;
-  padding: .6rem 10rem;
+  padding: 0.6rem 10rem;
   margin-top: 1.5rem;
   width: 100%;
   color: white;

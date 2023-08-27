@@ -1,6 +1,7 @@
-import GlobalState from "@/context";
+import GlobalState from "../context";
 import "./globals.css";
-import Navbar from "@/components/navbar/Navbar";
+import Navbar from "../components/navbar/Navbar";
+import { Toaster } from "react-hot-toast";
 
 export const metadata = {
   title: "Blackable",
@@ -10,8 +11,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body>
+      <body cz-shortcut-listen="false">
         <GlobalState>
+          <Toaster position="top-center" reverseOrder={false} />
           <Navbar />
           {children}
         </GlobalState>

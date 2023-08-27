@@ -1,8 +1,28 @@
 "use client";
-import { createContext } from "react";
+import Cookies from "js-cookie";
+import { createContext, useEffect, useState } from "react";
 
 export const GlobalContext = createContext(null);
 
 export default function GlobalState({ children }) {
-  return <GlobalContext.Provider value={{}}>{children}</GlobalContext.Provider>;
+  const [isAuthUser, setIsAuthUser] = useState(null);
+  const [user, setUser] = useState(null);
+  useEffect(() => {
+    // console.log(Cookies.get("token"));
+    if (Cookies.get("token")) {
+      setIsAuthUser(true);
+      const userData = JSON.parse(localStorage.getItem("user")) || {};
+      setUser(userData);
+    } else {
+      setIsAuthUser(false);
+    }
+  }, [isAuthUser]);
+
+  return (
+    <GlobalContext.Provider
+      value={{ isAuthUser, setIsAuthUser, user, setUser }}
+    >
+      {children}
+    </GlobalContext.Provider>
+  );
 }
