@@ -44,6 +44,9 @@ const Navbar = () => {
               <Link href={"/"}>
                 Hello <span className="text-secondary font-semibold">{user?.name}</span>
               </Link>
+              <Link href={"/admin"}>
+                ADMIN VIEW
+              </Link>
               <button onClick={handleLogout}>Logout</button>
             </>
           ) : (

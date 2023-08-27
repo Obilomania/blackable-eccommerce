@@ -36,10 +36,14 @@ const LoginPage = () => {
         return toast.error("All inputs are required");
       }
       const loggedInUser = await loginUser(formData);
-
+      const userRole = loggedInUser.finalData.user.role;
       if (loggedInUser.success === true) {
         toast.success("Login successful");
-         router.push("/");
+        if (userRole === "user") {
+          router.push("/");
+        } else {
+          router.push("/admin");
+        }
       } else {
         toast.error(loggedInUser.message);
       }
